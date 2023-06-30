@@ -8,7 +8,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - '9090:9090'
-    restart: always
     networks:
       - docker-compose-dueit_dueit_network
 networks:
