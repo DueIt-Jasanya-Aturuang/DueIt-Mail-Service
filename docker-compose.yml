@@ -2,10 +2,15 @@ version: '3'
 
 services:
   mail-service-dueit:
-   container_name: mail-service-dueit
-   build:
-     context: .
-     dockerfile: Dockerfile
-   ports:
-     - "9090:9090"
-   restart: always
+    container_name: mail-service-dueit
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '9090:9090'
+    restart: always
+    networks:
+      - docker-compose-dueit_dueit_network
+networks:
+  docker-compose-dueit_dueit_network:
+    external: true
