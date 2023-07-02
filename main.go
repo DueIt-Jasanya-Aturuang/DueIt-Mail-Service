@@ -65,11 +65,11 @@ func main() {
 			break
 		}
 
-		go func() {
-			if err := mailSvc.SendGOMAIL(m.Value); err != nil {
-				log.Err(err).Msgf("cannot send mail with smtp : %v", err)
-			}
-		}()
+		// go func() {
+		if err := mailSvc.SendGOMAIL(m.Value); err != nil {
+			log.Err(err).Msgf("cannot send mail with smtp : %v", err)
+		}
+		// }()
 
 		format := fmt.Sprintf("message at topic/partition/offset %v/%v/%v: %s = %s\n", m.Topic, m.Partition, m.Offset, string(m.Key), string(m.Value))
 		log.Info().Msg(format)
