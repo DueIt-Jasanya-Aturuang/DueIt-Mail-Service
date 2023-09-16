@@ -30,8 +30,8 @@ jobs:
 
       - name: build and push
         run: |
-          docker build . --tag ghcr.io/dueit-jasanya-aturuang/DueIt-Mail-Service:1.0
-          docker push ghcr.io/dueit-jasanya-aturuang/DueIt-Mail-Service:1.0
+          docker build . --tag ghcr.io/dueit-jasanya-aturuang/dueit-mail-service:1.0
+          docker push ghcr.io/dueit-jasanya-aturuang/dueit-mail-service:1.0
 
       - name: deploy to hosting ssh main branch
         uses: appleboy/ssh-action@master
