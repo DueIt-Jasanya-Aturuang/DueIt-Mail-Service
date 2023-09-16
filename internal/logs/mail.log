@@ -33,3 +33,49 @@
 {"level":"info","time":"2023-06-26T02:19:09+07:00","message":"consumer start listen..."}
 {"level":"info","time":"2023-06-26T02:19:37+07:00","message":"close kafka"}
 {"level":"info","time":"2023-06-26T02:19:37+07:00","message":"os exit"}
+{"level":"info","fileLogging":true,"jsonLogOutput":true,"logDirectory":"/home/ibanrama/Documents/developments/golang/jasanya-tech/dueit-micro-project/mail-service/internal/logs","fileName":"mail.log","maxSizeMB":200000000,"maxBackups":2000,"maxAgeInDays":2000,"time":"2023-09-16T11:39:13+07:00","message":"logging configured"}
+{"level":"info","fileLogging":true,"jsonLogOutput":true,"logDirectory":"/home/ibanrama/Documents/developments/golang/jasanya-tech/dueit-micro-project/mail-service/internal/logs","fileName":"mail.log","maxSizeMB":200000000,"maxBackups":2000,"maxAgeInDays":2000,"time":"2023-09-16T11:39:29+07:00","message":"logging configured"}
+{"level":"info","time":"2023-09-16T11:39:29+07:00","message":"consumer start listen..."}
+{"level":"error","error":"failed to dial: failed to open connection to 27.112.78.47:9093: dial tcp 27.112.78.47:9093: connect: connection refused","time":"2023-09-16T11:39:39+07:00","message":"cannot read message kafka : failed to dial: failed to open connection to 27.112.78.47:9093: dial tcp 27.112.78.47:9093: connect: connection refused"}
+{"level":"info","fileLogging":true,"jsonLogOutput":true,"logDirectory":"/home/ibanrama/Documents/developments/golang/jasanya-tech/dueit-micro-project/mail-service/internal/logs","fileName":"mail.log","maxSizeMB":200000000,"maxBackups":2000,"maxAgeInDays":2000,"time":"2023-09-16T11:46:31+07:00","message":"logging configured"}
+{"level":"info","time":"2023-09-16T11:46:31+07:00","message":"consumer start listen..."}
+{"level":"error","error":"[15] Group Coordinator Not Available: the broker returns this error code for group coordinator requests, offset commits, and most group management requests if the offsets topic has not yet been created, or if the group coordinator is not active","time":"2023-09-16T11:46:41+07:00","message":"cannot read message kafka : [15] Group Coordinator Not Available: the broker returns this error code for group coordinator requests, offset commits, and most group management requests if the offsets topic has not yet been created, or if the group coordinator is not active"}
+{"level":"info","fileLogging":true,"jsonLogOutput":true,"logDirectory":"/home/ibanrama/Documents/developments/golang/jasanya-tech/dueit-micro-project/mail-service/internal/logs","fileName":"mail.log","maxSizeMB":200000000,"maxBackups":2000,"maxAgeInDays":2000,"time":"2023-09-16T11:49:22+07:00","message":"logging configured"}
+{"level":"info","time":"2023-09-16T11:49:22+07:00","message":"consumer start listen..."}
+{"level":"error","error":"[15] Group Coordinator Not Available: the broker returns this error code for group coordinator requests, offset commits, and most group management requests if the offsets topic has not yet been created, or if the group coordinator is not active","time":"2023-09-16T11:49:32+07:00","message":"cannot read message kafka : [15] Group Coordinator Not Available: the broker returns this error code for group coordinator requests, offset commits, and most group management requests if the offsets topic has not yet been created, or if the group coordinator is not active"}
+{"level":"info","fileLogging":true,"jsonLogOutput":true,"logDirectory":"/home/ibanrama/Documents/developments/golang/jasanya-tech/dueit-micro-project/mail-service/internal/logs","fileName":"mail.log","maxSizeMB":200000000,"maxBackups":2000,"maxAgeInDays":2000,"time":"2023-09-16T11:51:10+07:00","message":"logging configured"}
+{"level":"info","time":"2023-09-16T11:51:10+07:00","message":"consumer start listen..."}
+{"level":"error","error":"[15] Group Coordinator Not Available: the broker returns this error code for group coordinator requests, offset commits, and most group management requests if the offsets topic has not yet been created, or if the group coordinator is not active","time":"2023-09-16T11:51:20+07:00","message":"cannot read message kafka : [15] Group Coordinator Not Available: the broker returns this error code for group coordinator requests, offset commits, and most group management requests if the offsets topic has not yet been created, or if the group coordinator is not active"}
+{"level":"info","fileLogging":true,"jsonLogOutput":true,"logDirectory":"/home/ibanrama/Documents/developments/golang/jasanya-tech/dueit-micro-project/mail-service/internal/logs","fileName":"mail.log","maxSizeMB":200000000,"maxBackups":2000,"maxAgeInDays":2000,"time":"2023-09-16T11:53:38+07:00","message":"logging configured"}
+{"level":"info","time":"2023-09-16T11:53:38+07:00","message":"consumer start listen..."}
+{"level":"error","error":"failed to dial: failed to open connection to 27.112.78.47:9093: dial tcp 27.112.78.47:9093: connect: connection refused","time":"2023-09-16T11:53:48+07:00","message":"cannot read message kafka : failed to dial: failed to open connection to 27.112.78.47:9093: dial tcp 27.112.78.47:9093: connect: connection refused"}
+{"level":"info","fileLogging":true,"jsonLogOutput":true,"logDirectory":"/home/ibanrama/Documents/developments/golang/jasanya-tech/dueit-micro-project/mail-service/internal/logs","fileName":"mail.log","maxSizeMB":200000000,"maxBackups":2000,"maxAgeInDays":2000,"time":"2023-09-16T11:56:43+07:00","message":"logging configured"}
+{"level":"info","time":"2023-09-16T11:56:43+07:00","message":"consumer start listen..."}
+{"level":"error","error":"failed to dial: failed to open connection to 27.112.78.47:9093: dial tcp 27.112.78.47:9093: connect: connection refused","time":"2023-09-16T11:58:19+07:00","message":"cannot read message kafka : failed to dial: failed to open connection to 27.112.78.47:9093: dial tcp 27.112.78.47:9093: connect: connection refused"}
+{"level":"info","fileLogging":true,"jsonLogOutput":true,"logDirectory":"/home/ibanrama/Documents/developments/golang/jasanya-tech/dueit-micro-project/mail-service/internal/logs","fileName":"mail.log","maxSizeMB":200000000,"maxBackups":2000,"maxAgeInDays":2000,"time":"2023-09-16T12:03:16+07:00","message":"logging configured"}
+{"level":"info","time":"2023-09-16T12:03:16+07:00","message":"consumer start listen..."}
+{"level":"info","time":"2023-09-16T12:03:23+07:00","message":"mail success send"}
+{"level":"info","time":"2023-09-16T12:03:23+07:00","message":"message at topic/partition/offset sendmail/0/0:  = {\"to\":\"ibanrama229@gmail.com\",\"type\":\"activasi-account\",\"value\":\"ItfkNn\"}\n"}
+{"level":"info","time":"2023-09-16T12:06:03+07:00","message":"close kafka"}
+{"level":"info","time":"2023-09-16T12:06:04+07:00","message":"os exit"}
+{"level":"info","fileLogging":true,"jsonLogOutput":true,"logDirectory":"/home/ibanrama/Documents/developments/golang/jasanya-tech/dueit-micro-project/mail-service/internal/logs","fileName":"mail.log","maxSizeMB":200000000,"maxBackups":2000,"maxAgeInDays":2000,"time":"2023-09-16T12:06:05+07:00","message":"logging configured"}
+{"level":"info","time":"2023-09-16T12:06:05+07:00","message":"consumer start listen..."}
+{"level":"info","time":"2023-09-16T12:06:12+07:00","message":"mail success send"}
+{"level":"info","time":"2023-09-16T12:06:12+07:00","message":"message at topic/partition/offset sendmail/0/1:  = {\"to\":\"ibanrama229@gmail.com\",\"type\":\"activasi-account\",\"value\":\"ItfkNn\"}\n"}
+{"level":"info","time":"2023-09-16T12:06:57+07:00","message":"close kafka"}
+{"level":"info","time":"2023-09-16T12:06:58+07:00","message":"os exit"}
+{"level":"info","fileLogging":true,"jsonLogOutput":true,"logDirectory":"/home/ibanrama/Documents/developments/golang/jasanya-tech/dueit-micro-project/mail-service/internal/logs","fileName":"mail.log","maxSizeMB":200000000,"maxBackups":2000,"maxAgeInDays":2000,"time":"2023-09-16T12:06:59+07:00","message":"logging configured"}
+{"level":"info","time":"2023-09-16T12:06:59+07:00","message":"consumer start listen..."}
+{"level":"info","time":"2023-09-16T12:07:11+07:00","message":"mail success send"}
+{"level":"info","time":"2023-09-16T12:07:11+07:00","message":"message at topic/partition/offset sendmail/0/2:  = {\"to\":\"ibanrama229@gmail.com\",\"type\":\"activasi-account\",\"value\":\"ItfkNn\"}\n"}
+{"level":"info","time":"2023-09-16T12:07:24+07:00","message":"mail success send"}
+{"level":"info","time":"2023-09-16T12:07:24+07:00","message":"message at topic/partition/offset sendmail/0/3:  = {\"to\":\"syaiban95@gmail.com\",\"type\":\"activasi-account\",\"value\":\"FZzeQx\"}\n"}
+{"level":"info","time":"2023-09-16T12:08:02+07:00","message":"close kafka"}
+{"level":"info","time":"2023-09-16T12:08:02+07:00","message":"os exit"}
+{"level":"error","error":"EOF","time":"2023-09-16T12:08:02+07:00","message":"cannot read message kafka : EOF"}
+{"level":"info","fileLogging":true,"jsonLogOutput":true,"logDirectory":"/home/ibanrama/Documents/developments/golang/jasanya-tech/dueit-micro-project/mail-service/internal/logs","fileName":"mail.log","maxSizeMB":200000000,"maxBackups":2000,"maxAgeInDays":2000,"time":"2023-09-16T12:08:03+07:00","message":"logging configured"}
+{"level":"info","time":"2023-09-16T12:08:03+07:00","message":"consumer start listen..."}
+{"level":"info","time":"2023-09-16T12:08:10+07:00","message":"mail success send"}
+{"level":"info","time":"2023-09-16T12:08:10+07:00","message":"message at topic/partition/offset sendmail/0/4:  = {\"to\":\"syaiban95@gmail.com\",\"type\":\"activasi-account\",\"value\":\"FZzeQx\"}\n"}
+{"level":"info","time":"2023-09-16T12:08:42+07:00","message":"close kafka"}
+{"level":"info","time":"2023-09-16T12:08:43+07:00","message":"os exit"}

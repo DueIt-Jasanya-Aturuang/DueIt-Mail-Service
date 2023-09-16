@@ -8,12 +8,14 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/rs/zerolog/log"
+	"github.com/segmentio/kafka-go"
+	"github.com/segmentio/kafka-go/sasl/plain"
+
 	"github.com/DueIt-Jasanya-Aturuang/DueIt-Mail-Service/config"
 	"github.com/DueIt-Jasanya-Aturuang/DueIt-Mail-Service/internal/logs"
 	"github.com/DueIt-Jasanya-Aturuang/DueIt-Mail-Service/internal/template"
 	"github.com/DueIt-Jasanya-Aturuang/DueIt-Mail-Service/modules/services"
-	"github.com/rs/zerolog/log"
-	"github.com/segmentio/kafka-go"
 )
 
 func main() {
@@ -30,6 +32,17 @@ func main() {
 		MaxAge:                2000,
 	})
 
+	mechanism := plain.Mechanism{
+		Username: "kafka",
+		Password: "pass12345",
+	}
+
+	dialer := &kafka.Dialer{
+		Timeout:       10 * time.Second,
+		DualStack:     true,
+		SASLMechanism: mechanism,
+	}
+
 	config := kafka.ReaderConfig{
 		Brokers:  []string{config.Get().Application.Kafka.Broker},
 		GroupID:  config.Get().Application.Kafka.Group,
@@ -37,6 +50,7 @@ func main() {
 		MaxWait:  500 * time.Millisecond,
 		MinBytes: 1,
 		MaxBytes: 10e6,
+		Dialer:   dialer,
 	}
 	r := kafka.NewReader(config)
 

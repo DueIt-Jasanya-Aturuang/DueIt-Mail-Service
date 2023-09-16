@@ -7,11 +7,12 @@ import (
 	"net/smtp"
 	"time"
 
+	"github.com/rs/zerolog/log"
+	"gopkg.in/gomail.v2"
+
 	"github.com/DueIt-Jasanya-Aturuang/DueIt-Mail-Service/config"
 	"github.com/DueIt-Jasanya-Aturuang/DueIt-Mail-Service/internal/template"
 	"github.com/DueIt-Jasanya-Aturuang/DueIt-Mail-Service/modules/entities"
-	"github.com/rs/zerolog/log"
-	"gopkg.in/gomail.v2"
 )
 
 type EmailService interface {
@@ -41,7 +42,7 @@ func (e *EmailServiceImpl) SendSmtp(payload []byte) error {
 	to := []string{mail["to"]}
 	cc := []string{"jasanya.tech@gmail.com"}
 
-	template := []byte(mail["message"])
+	template := []byte(mail["value"])
 
 	smtpAuth := smtp.PlainAuth("jasanya auth", config.Get().Mail.Address, config.Get().Mail.Pass, config.Get().Mail.Host)
 	smtpAddrs := fmt.Sprintf("%s:%d", config.Get().Mail.Host, config.Get().Mail.Port)
