@@ -19,6 +19,8 @@ type Config struct {
 			Group  string `mapstructure:"GROUP"`
 			Broker string `mapstructure:"BROKER"`
 			Topic  string `mapstructure:"TOPIC"`
+			User   string `mapstructure:"USER"`
+			Pass   string `mapstructure:"PASSWORD"`
 		} `mapstructure:"KAFKA"`
 	} `mapstructure:"APPLICATION"`
 	Mail struct {

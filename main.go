@@ -33,8 +33,8 @@ func main() {
 	})
 
 	mechanism := plain.Mechanism{
-		Username: "kafka",
-		Password: "pass12345",
+		Username: config.Get().Application.Kafka.User,
+		Password: config.Get().Application.Kafka.Pass,
 	}
 
 	dialer := &kafka.Dialer{

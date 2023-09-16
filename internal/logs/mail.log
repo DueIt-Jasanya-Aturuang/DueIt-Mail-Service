@@ -79,3 +79,10 @@
 {"level":"info","time":"2023-09-16T12:08:10+07:00","message":"message at topic/partition/offset sendmail/0/4:  = {\"to\":\"syaiban95@gmail.com\",\"type\":\"activasi-account\",\"value\":\"FZzeQx\"}\n"}
 {"level":"info","time":"2023-09-16T12:08:42+07:00","message":"close kafka"}
 {"level":"info","time":"2023-09-16T12:08:43+07:00","message":"os exit"}
+{"level":"info","fileLogging":true,"jsonLogOutput":true,"logDirectory":"/home/ibanrama/Documents/developments/golang/jasanya-tech/dueit-micro-project/mail-service/internal/logs","fileName":"mail.log","maxSizeMB":200000000,"maxBackups":2000,"maxAgeInDays":2000,"time":"2023-09-16T12:10:10+07:00","message":"logging configured"}
+{"level":"info","time":"2023-09-16T12:10:10+07:00","message":"consumer start listen..."}
+{"level":"error","error":"could not successfully authenticate to 27.112.78.47:9093 with SASL: [58] SASL Authentication Failed: SASL Authentication failed","time":"2023-09-16T12:10:21+07:00","message":"cannot read message kafka : could not successfully authenticate to 27.112.78.47:9093 with SASL: [58] SASL Authentication Failed: SASL Authentication failed"}
+{"level":"info","fileLogging":true,"jsonLogOutput":true,"logDirectory":"/home/ibanrama/Documents/developments/golang/jasanya-tech/dueit-micro-project/mail-service/internal/logs","fileName":"mail.log","maxSizeMB":200000000,"maxBackups":2000,"maxAgeInDays":2000,"time":"2023-09-16T12:10:58+07:00","message":"logging configured"}
+{"level":"info","time":"2023-09-16T12:10:58+07:00","message":"consumer start listen..."}
+{"level":"info","time":"2023-09-16T12:11:14+07:00","message":"close kafka"}
+{"level":"info","time":"2023-09-16T12:11:15+07:00","message":"os exit"}
