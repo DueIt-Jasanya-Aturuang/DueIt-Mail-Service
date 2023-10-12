@@ -30,7 +30,7 @@ func (t *EmailTemplateImpl) CodeOTP(data map[string]string) bytes.Buffer {
 func (t *EmailTemplateImpl) ForgotPassword(data map[string]string) bytes.Buffer {
 	var body bytes.Buffer
 
-	template, err := ParseTemplateDir("internal/template/html")
+	template, err := ParseTemplateDir("template/html")
 	if err != nil {
 		log.Err(err).Msg("could not parse template")
 	}
