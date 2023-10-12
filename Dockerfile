@@ -19,7 +19,7 @@ RUN mkdir app \
     && mkdir app/internal/template \
     && mkdir app/internal/template/html
 
-COPY --from=builder /dueit/mail-service/internal/template/html /app/internal/template/html
+COPY --from=builder /dueit/mail-service/template/html /app/template/html
 COPY --from=builder /dueit/mail-service/mail-service /app
 
 WORKDIR /app
