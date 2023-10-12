@@ -13,24 +13,12 @@ import (
 	"github.com/segmentio/kafka-go/sasl/plain"
 
 	"github.com/DueIt-Jasanya-Aturuang/DueIt-Mail-Service/config"
-	"github.com/DueIt-Jasanya-Aturuang/DueIt-Mail-Service/internal/logs"
-	"github.com/DueIt-Jasanya-Aturuang/DueIt-Mail-Service/internal/template"
-	"github.com/DueIt-Jasanya-Aturuang/DueIt-Mail-Service/modules/services"
+	"github.com/DueIt-Jasanya-Aturuang/DueIt-Mail-Service/internal"
+	"github.com/DueIt-Jasanya-Aturuang/DueIt-Mail-Service/template"
 )
 
 func main() {
-	dir, _ := os.Getwd()
-	dir = fmt.Sprintf("%s/internal/logs", dir)
-	logs.InitLogger(logs.Config{
-		ConsoleLoggingEnabled: true,
-		EncodeLogsAsJson:      true,
-		FileLoggingEnabled:    true,
-		Directory:             dir,
-		Filename:              "mail.log",
-		MaxSize:               200000000,
-		MaxBackups:            2000,
-		MaxAge:                2000,
-	})
+	config.LogInit()
 
 	mechanism := plain.Mechanism{
 		Username: config.Get().Application.Kafka.User,
@@ -43,23 +31,23 @@ func main() {
 		SASLMechanism: mechanism,
 	}
 
-	config := kafka.ReaderConfig{
+	kafkaConfig := kafka.ReaderConfig{
 		Brokers:  []string{config.Get().Application.Kafka.Broker},
 		GroupID:  config.Get().Application.Kafka.Group,
 		Topic:    config.Get().Application.Kafka.Topic,
-		MaxWait:  500 * time.Millisecond,
+		MaxWait:  time.Second,
 		MinBytes: 1,
 		MaxBytes: 10e6,
 		Dialer:   dialer,
 	}
-	r := kafka.NewReader(config)
+	r := kafka.NewReader(kafkaConfig)
 
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, os.Interrupt, syscall.SIGTERM)
 	ctx, cancel := context.WithCancel(context.Background())
 	go func() {
 		<-c
-		log.Info().Msg("close kafka")
+		log.Info().Msg("close kafka...")
 		if err := r.Close(); err != nil {
 			log.Info().Msgf("Failed to close reader:%v", err)
 		}
@@ -68,8 +56,8 @@ func main() {
 		os.Exit(1)
 	}()
 
-	template := template.NewEmailTemplateImpl()
-	mailSvc := services.NewEmailServiceImpl(template)
+	templateMail := template.NewEmailTemplateImpl()
+	mailSvc := internal.NewEmailServiceImpl(templateMail)
 
 	log.Info().Msg("consumer start listen...")
 	for {
@@ -79,13 +67,11 @@ func main() {
 			break
 		}
 
-		// go func() {
-		if err := mailSvc.SendGOMAIL(m.Value); err != nil {
+		if err = mailSvc.SendGOMAIL(m.Value); err != nil {
 			log.Err(err).Msgf("cannot send mail with smtp : %v", err)
 		}
-		// }()
 
-		format := fmt.Sprintf("message at topic/partition/offset %v/%v/%v: %s = %s\n", m.Topic, m.Partition, m.Offset, string(m.Key), string(m.Value))
-		log.Info().Msg(format)
+		formatMsg := fmt.Sprintf("message at topic/partition/offset %v/%v/%v: %s = %s\n", m.Topic, m.Partition, m.Offset, string(m.Key), string(m.Value))
+		log.Info().Msg(formatMsg)
 	}
 }

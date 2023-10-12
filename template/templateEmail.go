@@ -3,7 +3,6 @@ package template
 import (
 	"bytes"
 
-	"github.com/DueIt-Jasanya-Aturuang/DueIt-Mail-Service/modules/entities"
 	"github.com/rs/zerolog/log"
 )
 
@@ -13,7 +12,7 @@ func NewEmailTemplateImpl() *EmailTemplateImpl {
 	return &EmailTemplateImpl{}
 }
 
-func (t *EmailTemplateImpl) CodeOTP(data *entities.Email) bytes.Buffer {
+func (t *EmailTemplateImpl) CodeOTP(data map[string]string) bytes.Buffer {
 	var body bytes.Buffer
 
 	template, err := ParseTemplateDir("internal/template/html")
@@ -21,11 +20,14 @@ func (t *EmailTemplateImpl) CodeOTP(data *entities.Email) bytes.Buffer {
 		log.Err(err).Msg("could not parse template")
 	}
 
-	template.ExecuteTemplate(&body, "codeOtp.html", &data)
+	err = template.ExecuteTemplate(&body, "codeOtp.html", &data)
+	if err != nil {
+		log.Err(err).Msg("failed to execute template")
+	}
 	return body
 }
 
-func (t *EmailTemplateImpl) ForgotPassword(data *entities.Email) bytes.Buffer {
+func (t *EmailTemplateImpl) ForgotPassword(data map[string]string) bytes.Buffer {
 	var body bytes.Buffer
 
 	template, err := ParseTemplateDir("internal/template/html")
@@ -33,6 +35,11 @@ func (t *EmailTemplateImpl) ForgotPassword(data *entities.Email) bytes.Buffer {
 		log.Err(err).Msg("could not parse template")
 	}
 
-	template.ExecuteTemplate(&body, "forgotPassword.html", &data)
+	err = template.ExecuteTemplate(&body, "forgotPassword.html", &data)
+	if err != nil {
+		if err != nil {
+			log.Err(err).Msg("failed to execute template")
+		}
+	}
 	return body
 }
