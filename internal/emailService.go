@@ -53,6 +53,7 @@ func (e *EmailServiceImpl) SendGOMAIL(payload []byte) error {
 	if err := json.Unmarshal(payload, &mail); err != nil {
 		return err
 	}
+	log.Info().Msgf("%v", mail)
 
 	var templateMailValue string
 	if mail["type"] == "activasi-account" {
